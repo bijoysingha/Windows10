@@ -1,0 +1,20 @@
+Connect all files like 
+  | 
+  (Downloads.bat,LM_Windows_Github_RDP.yml,loop.bat,loop.py,setup.py,show.bat)
+enter and make pass 
+for x, y, duration in actions:
+    if (x, y, duration) == (387, 253, 10):
+        pag.click(x, y, duration=duration)
+        pag.typewrite(password)
+    elif (x, y, duration) == (387, 298, 4):
+        pag.click(x, y, duration=duration)
+        pag.typewrite(password)
+    elif (x, y, duration) == (460, 321, 4):
+        pag.rightClick(x, y, duration=duration)
+    elif (x, y, duration) == (610, 531, 4):
+        pag.click(x, y, duration=duration)
+
+put - name: Connect to LiteManager
+        run: cmd /c show.bat
+putlet - name: Time Counter
+        run: cmd /c loop.bat
